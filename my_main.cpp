@@ -1,4 +1,4 @@
-﻿#include "fairy_tail.hpp"
+#include "fairy_tail.hpp"
 #include <locale.h>
 
 /*Для решения поставленной задачи создан класс Solution, метод Solve проверяет, возможна ли встреча, 
@@ -125,8 +125,16 @@ public:
 
 		return true;
 	}
+
+	//получение количества ходов
 	int getTurnCount() {
 		return world.getTurnCount();
+	}
+
+	~Solution() {
+		for (int i = 0; i < size; i++)
+			delete[]Ivan[i];
+		delete[]Ivan;
 	}
 	
 private:
